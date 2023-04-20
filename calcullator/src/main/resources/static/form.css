@@ -123,6 +123,16 @@ select option {
   background-color: #f0a500;
   color: #fff;
 }
+
+header {
+  padding: 40px;
+  text-align: left;
+  background: #dc7f0d;
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
 .input-group {
   margin-bottom: 1em;
   zoom: 1;

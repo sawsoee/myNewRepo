@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link th:href="@{/form.css}" rel="stylesheet">
-   
+    <title>Document</title>   
 </head>
 <body> 
+    <header>
+        <a th:href="@{/}">Calculator</a>
+        <a th:href="@{/percent}">Percent</a>
+    </header>
     <h1 style="text-align: center;color: black;">Calculator</h1>
         
-        <form method="post" th:action="@{/handelSubmit}" class="container">
-
-
-           
+        <form method="post" th:action="@{/handelSubmit}" class="container">         
                 <input type="text" name="num1" placeholder="number 1" class="col-third" >
                 <select name="operator" class="col-third">
                     <option>+</option>
@@ -22,17 +22,10 @@
                     <option>*</option>
                     <option>/</option>
                 </select>
-                <input type="text" name="num2" placeholder="number 2" class="col-third">  
-                
-         
+                <input type="text" name="num2" placeholder="number 2" class="col-third">          
                 <input type="submit" placeholder="done" style="background-color: orange;">
                 <h1  style="text-align: center;color: black;">Result :</h1>
-                <h1 th:text="${result}" style="text-align: center;color: black;"></h1>
-    
-           
-            
-                    
-    
+                <h1 th:text="${result}" style="text-align: center;color: black;"></h1>    
          </form>
 </body>
 </html>

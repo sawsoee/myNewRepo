@@ -26,5 +26,10 @@ public class CalculateImpl implements Calculate {
         }
         return index;
     }
+
+    @Override
+    public Double percent(Double sum, Double percent) {
+       return sum / 100 * percent;
+    }
     
 }

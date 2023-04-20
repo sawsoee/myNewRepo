@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/form.css}" rel="stylesheet">
+    <title>Percent</title>
+</head>
+<body>
+    <header>
+        <a th:href="@{/}">Calculator</a>
+        <a th:href="@{/percent}">Percent</a>
+    </header>
+    <h1 style="text-align: center;color: black;">Percent</h1>
+    <form method="post" th:action="@{/handelPercent}" class="container">
+        <input type="text" placeholder="sum" name="sum">
+        <input type="text" placeholder="percent" name="percent">
+        <h1 style="text-align: center;color: black;">Result</h1>
+        <h1 th:text="${percentResult}" style="text-align: center;color: black;"></h1>
+        <input type="submit" style="background-color: orange;">
+    </form>
+    
+</body>
+</html>

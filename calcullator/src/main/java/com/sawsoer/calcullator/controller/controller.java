@@ -14,6 +14,7 @@ import com.sawsoer.calcullator.service.CalculateImpl;
 public class controller {
 
     public Double result = null;
+    public Double percentResult = null;
     public CalculateImpl calculateImpl;
 
     public controller(CalculateImpl calculateImpl) {
@@ -26,19 +27,32 @@ public class controller {
         return "index";
     }
 
+    @GetMapping("/percent")
+    public String getPercent(Model model) {
+        model.addAttribute("percentResult", percentResult);
+        return "percent";
+    }
+
     @PostMapping("/handelSubmit")
     public String handelSubmit(@RequestParam(required = false) Double num1,
             @RequestParam(required = false) Double num2,
             @RequestParam(required = false) String operator) {
 
-        if(num1 == null || num2==null){
+        if (num1 == null || num2 == null) {
             return "redirect:/";
-        }      
+        }
 
         result = calculateImpl.calculate(num1, num2, operator);
         System.out.println(result);
         return "redirect:/";
     }
 
+    @PostMapping("/handelPercent")
+    public String handelPercent(@RequestParam(required = false) Double sum,
+            @RequestParam(required = false) Double percent) {
+            percentResult = calculateImpl.percent(sum, percent);
+            System.out.println(percentResult);
+        return "redirect:/percent";
+    }
 
 }
